@@ -21,6 +21,14 @@
     background-color: rgba(255, 255, 255, 0.137);
     box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.356),
             1px -1px 8px rgba(255, 255, 255, 0.329);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px;
+}
+.para{
+    color: #fff;
+    font-size: 20px;
 }
 
 .earth-demo:before {

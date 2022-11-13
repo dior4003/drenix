@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useCounter = (type) => {
+const useCounter = (type ,time=50) => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -8,7 +8,7 @@ const useCounter = (type) => {
       if (counter<type) {
         setCounter((prevCounter) => prevCounter + 1);
       } 
-    }, 50);
+    }, time);
 
     return () => {
       clearInterval(interval);
