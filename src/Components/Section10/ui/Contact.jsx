@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import "./earth.css"
 export default function Contact({ notif, datas }) {
   const [isValue, setIsValue] = useState("phone"),
     [data, setData] = useState({
@@ -56,7 +56,7 @@ export default function Contact({ notif, datas }) {
   };
   return (
     <div className="contact">
-      <div className="number_box">
+      {/* <div className="number_box">
         <div className="titl">
           <h1>{datas.title1}</h1>
         </div>
@@ -128,8 +128,34 @@ export default function Contact({ notif, datas }) {
             <button>{datas.btn}</button>
           </div>
         </form>
-      </div>
+      </div> */}
       <ToastContainer />
+      <article className="earth-demo">
+        <div className="earth">
+          <div className="more-info">
+            <h1>Earth</h1>
+            <ul>
+              <li>Third planet from the Sun</li>
+              <li>Atmosphere: 21% oxygen</li>
+              <li>Liquid water on surface</li>
+              <li>Only planet that has life (that we know of)</li>
+            </ul>
+          </div>
+          <img src="https://cssanimation.rocks/images/random/earth.png" alt=""/>
+        </div>
+        <div className="moon-container">
+          <div className="moon">
+            <img src="https://cssanimation.rocks/images/random/moon.png" alt=""/>
+          </div>
+        </div>
+        <div className="cont_sec">
+          
+        </div>
+
+
+
+      </article>
+
     </div>
   );
 }

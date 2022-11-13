@@ -15,6 +15,10 @@ export default function Section10({ data }) {
         <Corusel data={data.corusel ? data.corusel : []} />
       </div>
       <Contact datas={data.contact ? data.contact : []} />
+
+      <div className="contact_btn">
+        <img src="https://velesokolo.ru/wp-content/uploads/2019/07/9e619c79ba3e1608b0f2cea0b7169612.png" alt="" />
+      </div>
     </section>
   );
 }

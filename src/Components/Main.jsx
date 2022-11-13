@@ -6,6 +6,7 @@ import Header from "./Header";
 import Loader from "./Loader";
 import MainSection from "./Section1";
 import Section10 from "./Section10/Section10";
+// import Fireworks from "./Section10/ui/particles";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import Section4 from "./Section4";
@@ -66,7 +67,8 @@ export default function Main() {
           <Section8 data={data.section8} />
           {posts>0?<Section9 />:null}
           <Section10 data={data.section10} />
-          <Footer data={data.footer} />
+            <Footer data={ data.footer } />
+            {/* <Fireworks/> */}
         </>
       )}
     </div>

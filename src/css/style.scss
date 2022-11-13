@@ -435,6 +435,16 @@ a {
   }
   
 }
+
+.contact_btn{
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}
 @media (max-width: 2560px) {
   .header_box {
     width: 70%;
@@ -2317,12 +2327,12 @@ a {
   }
   .footer {
     width: 100%;
-    height: 43rem;
+    height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 248px;
+    // padding-top: 248px;
 
-    margin-top: -200px;
+    // margin-top: -200px;
     position: relative;
     .links {
       margin-left: auto;
@@ -4391,12 +4401,12 @@ a {
   }
   .footer {
     width: 100%;
-    height: 43rem;
+    height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 248px;
+    // padding-top: 248px;
 
-    margin-top: -200px;
+    // margin-top: -200px;
     position: relative;
     .links {
       margin-left: auto;
@@ -6345,7 +6355,7 @@ a {
       background-size: contain;
       border-radius: 8px;
       z-index: 3;
-
+      
       .number_box {
         display: flex;
         justify-content: space-between;
@@ -6469,12 +6479,12 @@ a {
   }
   .footer {
     width: 100%;
-    height: 30rem;
+    height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 148px;
+    // padding-top: 148px;
 
-    margin-top: -100px;
+    // margin-top: -100px;
     position: relative;
     .links {
       margin-left: auto;
@@ -8597,9 +8607,9 @@ a {
     height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 148px;
+    // padding-top: 148px;
 
-    margin-top: -100px;
+    // margin-top: -100px;
     position: relative;
     .links {
       margin-left: auto;
@@ -10761,9 +10771,9 @@ a {
     height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 148px;
+    // padding-top: 148px;
 
-    margin-top: -100px;
+    // margin-top: -100px;
     position: relative;
     .links {
       margin-left: auto;
@@ -12939,10 +12949,10 @@ a {
     height: 100%;
     background-color: #010c2a;
     z-index: 1;
-    padding-top: 148px;
-    margin-bottom: 20px;
-
-    margin-top: -100px;
+    // padding-top: 148px;
+    // margin-bottom: 20px;
+// 
+    // margin-top: -100px;
     position: relative;
     .links {
       margin-left: auto;
