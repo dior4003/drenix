@@ -71,12 +71,10 @@ export default function Main() {
               <Section8 data={data.section8} />
               {posts>0?<Section9 />:null}
               </>
-            ):<Section10 data={data.section10} cont={cont} setCont={setCont} />
+            ):null
           }
+          <Section10 data={data.section10} cont={cont} setCont={setCont} />
           
-          <div className="contact_btn" onClick={()=>setCont(true)}>
-            <img src="https://velesokolo.ru/wp-content/uploads/2019/07/9e619c79ba3e1608b0f2cea0b7169612.png" alt="" />
-          </div>
             <Footer data={ data.footer } />
             {/* <Fireworks/> */}
         </>

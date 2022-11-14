@@ -7,7 +7,7 @@ export default function Corusel({ data }) {
   return (
     <CarouselProvider
       naturalSlideWidth={50}
-      naturalSlideHeight={50}
+      naturalSlideHeight={80}
       totalSlides={5}
       visibleSlides={1.3}
       currentSlide={2}
@@ -19,7 +19,7 @@ export default function Corusel({ data }) {
             <img
               src={`https://drenix-back.herokuapp.com/static/media/${item.img}`}
               alt=""
-              style={{ width: "90px", height: "50px" }}
+              style={{ width: "90px", height: "90px" }}
             />
           </Slide>
         ))}
