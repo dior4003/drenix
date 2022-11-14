@@ -101,11 +101,11 @@ export default function Contact({ notif, datas }) {
               <p className="para">{Writer(p.t1 ,10 ,false)}</p>
             </div>
             <div className="tit_c2">
-              <p className="para2">{ Writer(p.t2 ,p.t1.length*50 ,false)}</p>
+              <p className="para2">{ Writer(p.t2 ,p.t1.length*40 ,false)}</p>
             </div>
             <div className="tit_c3">
-              <p className="para3">{ Writer(p.t3 ,(p.t2.length)*50 ,false)}</p>
-            </div>{Writer(p.t3 ,p.t2.length*50).length===p.t3.length?(
+              <p className="para3">{ Writer(p.t3 ,(p.t2.length)*40 ,false)}</p>
+            </div>{Writer(p.t3 ,p.t2.length*40).length===p.t3.length?(
             <div className="text_int">
             <input
               type="text"
@@ -120,11 +120,11 @@ export default function Contact({ notif, datas }) {
             <span className="span" style={{background:`${data.name.length>=3?"rgba(0, 75, 10, 1)":"transparent"}`}} onClick={()=>data.name.length>=3?setNext(1):setNext(0)}>Davom etish</span>
           </div>):null}
           <div className="tit_c2">
-              <p className="para2">{ Writer(p.t4 , (p.t3.length)*50,next===1?false:true)}</p>
+              <p className="para2">{ Writer(p.t4 , (p.t3.length)*40,next===1?false:true)}</p>
             </div>
             <div className="contact_input">
                 
-                  {Writer(p.t4 ,p.t3.length*50 , next===1?false:true).length===p.t4.length?(
+                  {Writer(p.t4 ,p.t3.length*40 , next===1?false:true).length===p.t4.length?(
                     <>
                     <div className="name_input">
                     <div className="phone_int">
@@ -167,10 +167,10 @@ export default function Contact({ notif, datas }) {
                   
             </div>
             <div className="tit_c2">
-              <p className="para2">{ Writer(p.t5 , (p.t4.length)*50,next===2?false:true)}</p>
+              <p className="para2">{ Writer(p.t5 , (p.t4.length)*40,next===2?false:true)}</p>
             </div>
             {
-              Writer(p.t5 ,p.t4.length*50 , next===2?false:true).length===p.t5.length?
+              Writer(p.t5 ,p.t4.length*40 , next===2?false:true).length===p.t5.length?
               (
                 <div className="team_input">
                   
@@ -191,9 +191,9 @@ export default function Contact({ notif, datas }) {
               ):null
             }
           <div className="tit_c2">
-              <p className="para2">{ Writer(p.t6 , (p.t5.length)*50,next===3?false:true)}</p>
+              <p className="para2">{ Writer(p.t6 , (p.t5.length)*40,next===3?false:true)}</p>
             </div>
-            { Writer(p.t6 ,p.t5.length*50 , next===3?false:true).length===p.t6.length?
+            { Writer(p.t6 ,p.t5.length*40 , next===3?false:true).length===p.t6.length?
             (
               <div className="submit">
                 <button className="span">{datas.btn}</button>

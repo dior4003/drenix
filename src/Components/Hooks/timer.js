@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useDelayHook from "./delayHook";
 
 const UseTimer = (type ,time=50 ,delay ,stop) => {
   const [counter, setCounter] = useState(0);
@@ -16,15 +17,7 @@ const UseTimer = (type ,time=50 ,delay ,stop) => {
       clearInterval(interval);
     };
   });
-  useEffect(() => {
-    if(stop===true){
-      setNext(false)
-    }else{
-      const timer = setTimeout(() => setNext(true), delay);
-      return () => clearTimeout(timer);
-    }
-    
-  });
+  useDelayHook(setNext ,delay ,stop)
 
 
   return counter;
