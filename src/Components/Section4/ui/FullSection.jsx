@@ -1,7 +1,7 @@
 import React from "react";
-import useCounter from "../../Hooks/counter";
+import UseCounter from "../../Hooks/counter";
 export default function FullSection({ item = [] }) {
-  const num = useCounter(1000);
+  const num = UseCounter(1000);
 
   return (
     <div className="full_section">

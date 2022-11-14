@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-const useCounter = (type ,time=50) => {
+const UseCounter = (type ,time=50) => {
   const [counter, setCounter] = useState(0);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,4 +19,4 @@ const useCounter = (type ,time=50) => {
   return counter;
 };
 
-export default useCounter;
+export default UseCounter;

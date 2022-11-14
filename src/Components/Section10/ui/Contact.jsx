@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import useCounter from "../../Hooks/counter";
 import "./earth.css"
+import Writer from "./useCouner";
 export default function Contact({ notif, datas }) {
+  const [next,setNext] =useState(null)
+
   const [isValue, setIsValue] = useState("phone"),
     [data, setData] = useState({
       phone: "",
@@ -49,6 +50,8 @@ export default function Contact({ notif, datas }) {
             });
             console.log(error);
       })
+      setNext(4)
+
     setData({
       phone: "",
       userName: "",
@@ -56,19 +59,23 @@ export default function Contact({ notif, datas }) {
       decr: "",
     })
   };
-  const p = "fvbgnhjmk,l.;/.l,kmjnhbgfvcd"
-  let c =useCounter(p.length ,100)
-  const [ tit, setTit ] = useState( "" )
-  console.log( c );
-  useEffect( () => {
-    setTit(p.substring(0 ,c))
-  },[c ,p])
+  const p ={
+    t1: "Salom Drenix Academiyasining rasmiy saytiga hush kelibsiz!!!",
+    t2:"Biz bilan bog'laning va o'z kelajagingiz poydevorini biz bilan quring",
+    t3:" Iltimos ismingizni kiriting",
+    t4:"Iltimos telegram foydalanuvchi nomi yoki telefon raqamingizni kiriting",
+    t5:"Takliflar va sizni qiziqtirgan savollaringizni kiriting",
+    t6:"Jo'natish tugmasini bosing va biz siz bilan albatta aloqaga chiqamiz!!!"
+  }
+  
+ 
+
   
   
   return (
     <div className="contact">
      
-      <ToastContainer />
+     
       <article className="earth-demo">
         <div className="earth">
           <div className="more-info">
@@ -87,90 +94,121 @@ export default function Contact({ notif, datas }) {
             <img src="https://cssanimation.rocks/images/random/moon.png" alt=""/>
           </div>
         </div>
-        <div className="cont_sec">
-          <div className="tit_c">
-            <p className="para">{tit}</p>
-          </div>
-           <div className="number_box">
-            {/* <div className="titl">
-              <h1></h1>
-            </div> */}
-            <div className="phone">
-              <h1>{datas.phone}</h1>
+        <div className=" cont_sec">
+          <div className={next===4?"containers":""}>
+          <form onSubmit={onSubmit}>
+            <div className="tit_c">
+              <p className="para">{Writer(p.t1 ,10 ,false)}</p>
             </div>
-          </div>
-          <div className="form">
-            <form onSubmit={onSubmit}>
-              <div className="contact_input">
-                <div className="name_input">
-                  <div className="phone_int">
-                    <span onClick={() => setIsValue("phone")}>
-                      <i className="fa-solid fa-phone"></i>
-                    </span>
+            <div className="tit_c2">
+              <p className="para2">{ Writer(p.t2 ,p.t1.length*50 ,false)}</p>
+            </div>
+            <div className="tit_c3">
+              <p className="para3">{ Writer(p.t3 ,(p.t2.length)*50 ,false)}</p>
+            </div>{Writer(p.t3 ,p.t2.length*50).length===p.t3.length?(
+            <div className="text_int">
+            <input
+              type="text"
+              placeholder={datas.place1}
+              value={data.name}
+              onChange={(e) => setData({ ...data, name: e.target.value })}
+              min={4}
+              required={true}
+              
+              style={{background:`${next===0?"red":"transparent"}`}}
+            />
+            <span className="span" style={{background:`${data.name.length>=3?"rgba(0, 75, 10, 1)":"transparent"}`}} onClick={()=>data.name.length>=3?setNext(1):setNext(0)}>Davom etish</span>
+          </div>):null}
+          <div className="tit_c2">
+              <p className="para2">{ Writer(p.t4 , (p.t3.length)*50,next===1?false:true)}</p>
+            </div>
+            <div className="contact_input">
+                
+                  {Writer(p.t4 ,p.t3.length*50 , next===1?false:true).length===p.t4.length?(
+                    <>
+                    <div className="name_input">
+                    <div className="phone_int">
+                      <span onClick={() => setIsValue("phone")}>
+                        <i className="fa-solid fa-phone"></i>
+                      </span>
+                    </div>
+                    <div className="tg_int">
+                      <span onClick={() => setIsValue("tg")}>
+                        {" "}
+                        <i className="fa-brands fa-telegram"></i>
+                      </span>
+                    </div>
                   </div>
-                  <div className="tg_int">
-                    <span onClick={() => setIsValue("tg")}>
-                      {" "}
-                      <i className="fa-brands fa-telegram"></i>
-                    </span>
+                    <div className="contact_int">
+                    <input
+                      className="inputs"
+                      id="contact"
+                      type={isValue === "phone" ? "number" : "text"}
+                      placeholder={
+                        isValue === "phone"
+                          ? `${datas.intName[0]}`
+                          : `${datas.intName[1]}`
+                      }
+                      value={isValue === "phone" ? data.phone : data.userName}
+                      onChange={
+                        isValue === "phone"
+                          ? (e) => setData({ ...data, phone: e.target.value })
+                          : (e) => setData({ ...data, userName: e.target.value })
+                      }
+                      required={true}
+                      name="contact"
+                      style={{background:`${next===1?"red":"transparent"}`}}
+                    />
+                    <span  style={{background:`${data.phone.length>=3||data.userName.length>=3?"rgba(0, 75, 10, 1)":"transparent"}`}} onClick={()=>data.phone.length>=3||data.userName.length>=3?setNext(2):setNext(1)} className="span"> Davom etish</span>
                   </div>
+                    </>
+                    
+                  ):null}
+                  
+            </div>
+            <div className="tit_c2">
+              <p className="para2">{ Writer(p.t5 , (p.t4.length)*50,next===2?false:true)}</p>
+            </div>
+            {
+              Writer(p.t5 ,p.t4.length*50 , next===2?false:true).length===p.t5.length?
+              (
+                <div className="team_input">
+                  
+                  <div className="text_int">
+                    <textarea
+                    className="inputs"
+                      id="noter-text-area"
+                      name="textarea"
+                      placeholder={datas.place2}
+                      value={data.decr}
+                      onChange={(e) => setData({ ...data, decr: e.target.value })}
+                      min={50}
+                      required={true}
+                    />
+                  </div>
+                  <span  style={{background:`${data.decr.length>=30?"rgba(0, 75, 10, 1)":"transparent"}`}} onClick={()=>data.decr.length>=30?setNext(3):setNext(2)} className="span"> Davom etish</span>
                 </div>
-                <div className="contact_int">
-                  <input
-                    id="contact"
-                    type={isValue === "phone" ? "number" : "text"}
-                    placeholder={
-                      isValue === "phone"
-                        ? `${datas.intName[0]}`
-                        : `${datas.intName[1]}`
-                    }
-                    value={isValue === "phone" ? data.phone : data.userName}
-                    onChange={
-                      isValue === "phone"
-                        ? (e) => setData({ ...data, phone: e.target.value })
-                        : (e) => setData({ ...data, userName: e.target.value })
-                    }
-                    required={true}
-                    name="contact"
-                  />
-                  <label htmlFor="contact"> {datas.label}</label>
-                </div>
-              </div>
-              <div className="team_input">
-                <div className="text_int">
-                  <input
-                    type="text"
-                    placeholder={datas.place1}
-                    value={data.name}
-                    onChange={(e) => setData({ ...data, name: e.target.value })}
-                    min={4}
-                    required={true}
-                  />
-                </div>
-                <div className="text_int">
-                  <textarea
-                    id="noter-text-area"
-                    name="textarea"
-                    placeholder={datas.place2}
-                    value={data.decr}
-                    onChange={(e) => setData({ ...data, decr: e.target.value })}
-                    min={50}
-                    required={true}
-                  />
-                </div>
-              </div>
+              ):null
+            }
+          <div className="tit_c2">
+              <p className="para2">{ Writer(p.t6 , (p.t5.length)*50,next===3?false:true)}</p>
+            </div>
+            { Writer(p.t6 ,p.t5.length*50 , next===3?false:true).length===p.t6.length?
+            (
               <div className="submit">
-                <button>{datas.btn}</button>
+                <button className="span">{datas.btn}</button>
               </div>
-            </form>
+            ):null}
+          
+          </form>
           </div>
-
+          {/* <div className="thanks">
+            <h1>hello</h1>
+          </div> */}
         </div>
-
-
-
+        
       </article>
-
+      <ToastContainer />
     </div>
   );
 }

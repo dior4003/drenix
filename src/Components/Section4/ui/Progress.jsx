@@ -1,8 +1,8 @@
 import React from "react";
-import useCounter from "../../Hooks/counter";
+import UseCounter from "../../Hooks/counter";
 
 export default function Progress({ data }) {
-  const num = useCounter(100);
+  const num = UseCounter(100);
   return (
     <>
       {data.map((item, i) => (
