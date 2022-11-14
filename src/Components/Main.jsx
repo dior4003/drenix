@@ -20,6 +20,7 @@ export default function Main() {
   // const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const [ posts , setPosts]=useState(null)
+  const [cont , setCont]=useState(false)
   const [lang, setLang] = useState("uz");
   useEffect(() => {
     fetch(`https://drenix-back.herokuapp.com/static/${lang}.json`)
@@ -57,16 +58,25 @@ export default function Main() {
             lang={lang}
             setLang={setLang}
           />
-          <MainSection data={data.section1} />
-          <Section2 data={data.section2} />
-          <Section3 data={data.section3} />
-          <Section4 data={data.section4} />
-          <Section5 data={data.sectoin5} />
-          <Section6 data={data.seaction6} />
-          <Section7 data={data.sectoin7} />
-          <Section8 data={data.section8} />
-          {posts>0?<Section9 />:null}
-          <Section10 data={data.section10} />
+          {
+            !cont?(
+              <>
+              <MainSection data={data.section1} />
+              <Section2 data={data.section2} />
+              <Section3 data={data.section3} />
+              <Section4 data={data.section4} />
+              <Section5 data={data.sectoin5} />
+              <Section6 data={data.seaction6} />
+              <Section7 data={data.sectoin7} />
+              <Section8 data={data.section8} />
+              {posts>0?<Section9 />:null}
+              </>
+            ):<Section10 data={data.section10} cont={cont} setCont={setCont} />
+          }
+          
+          <div className="contact_btn" onClick={()=>setCont(true)}>
+            <img src="https://velesokolo.ru/wp-content/uploads/2019/07/9e619c79ba3e1608b0f2cea0b7169612.png" alt="" />
+          </div>
             <Footer data={ data.footer } />
             {/* <Fireworks/> */}
         </>

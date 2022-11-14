@@ -430,12 +430,32 @@ a {
   position: fixed;
   bottom: 10%;
   right: 5%;
+  z-index: 2;
 }
 .contact_btn img {
   width: 100px;
   height: 100px;
+  -webkit-animation: crescendo 1.5s alternate infinite ease-in;
+          animation: crescendo 1.5s alternate infinite ease-in;
 }
 
+@-webkit-keyframes crescendo {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes crescendo {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
 @media (max-width: 2560px) {
   .header_box {
     width: 70%;

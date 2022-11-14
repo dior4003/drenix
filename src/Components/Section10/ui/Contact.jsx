@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "./earth.css"
 import Writer from "./useCouner";
-export default function Contact({ notif, datas }) {
+export default function Contact({ datas ,setCont}) {
   const [next,setNext] =useState(null)
 
   const [isValue, setIsValue] = useState("phone"),
@@ -58,6 +58,7 @@ export default function Contact({ notif, datas }) {
       name: "",
       decr: "",
     })
+    setCont(false)
   };
   const p ={
     t1: "Salom Drenix Academiyasining rasmiy saytiga hush kelibsiz!!!",
@@ -78,15 +79,6 @@ export default function Contact({ notif, datas }) {
      
       <article className="earth-demo">
         <div className="earth">
-          <div className="more-info">
-            <h1>Earth</h1>
-            <ul>
-              <li>Third planet from the Sun</li>
-              <li>Atmosphere: 21% oxygen</li>
-              <li>Liquid water on surface</li>
-              <li>Only planet that has life (that we know of)</li>
-            </ul>
-          </div>
           <img src="https://cssanimation.rocks/images/random/earth.png" alt=""/>
         </div>
         <div className="moon-container">
@@ -113,7 +105,7 @@ export default function Contact({ notif, datas }) {
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
               min={4}
-              required={true}
+              required
               
               style={{background:`${next===0?"red":"transparent"}`}}
             />
@@ -129,13 +121,13 @@ export default function Contact({ notif, datas }) {
                     <div className="name_input">
                     <div className="phone_int">
                       <span onClick={() => setIsValue("phone")}>
-                        <i className="fa-solid fa-phone"></i>
+                        <i className="i fa-solid fa-phone"></i>
                       </span>
                     </div>
                     <div className="tg_int">
                       <span onClick={() => setIsValue("tg")}>
                         {" "}
-                        <i className="fa-brands fa-telegram"></i>
+                        <i className="i fa-brands fa-telegram"></i>
                       </span>
                     </div>
                   </div>
@@ -155,7 +147,7 @@ export default function Contact({ notif, datas }) {
                           ? (e) => setData({ ...data, phone: e.target.value })
                           : (e) => setData({ ...data, userName: e.target.value })
                       }
-                      required={true}
+                      required
                       name="contact"
                       style={{background:`${next===1?"red":"transparent"}`}}
                     />
@@ -183,7 +175,7 @@ export default function Contact({ notif, datas }) {
                       value={data.decr}
                       onChange={(e) => setData({ ...data, decr: e.target.value })}
                       min={50}
-                      required={true}
+                      required
                     />
                   </div>
                   <span  style={{background:`${data.decr.length>=30?"rgba(0, 75, 10, 1)":"transparent"}`}} onClick={()=>data.decr.length>=30?setNext(3):setNext(2)} className="span"> Davom etish</span>
